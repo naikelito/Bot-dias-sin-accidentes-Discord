@@ -12,7 +12,7 @@ from disnake.ext import commands, tasks
 
 # ========== CONFIGURA AQUÍ ==========
 TEXT_CHANNEL_ID = 1427876160867536926  # <-- REEMPLAZA por el ID del canal de texto
-MY_TOKEN = "a"  # usa variable de entorno o pega aquí
+MY_TOKEN = os.environ.get("DISCORD_TOKEN")  # usa variable de entorno o pega aquí
 DATA_FILE = "data.txt"
 MSG_ID_FILE = "message_id.txt"
 # ====================================
@@ -188,3 +188,4 @@ if __name__ == "__main__":
     if not MY_TOKEN or MY_TOKEN == "PEGATU_TOKEN_AQUI":
         raise RuntimeError("Debes configurar el token en DISCORD_TOKEN o en MY_TOKEN.")
     bot.run(MY_TOKEN)
+
